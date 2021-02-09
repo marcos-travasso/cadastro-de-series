@@ -10,6 +10,7 @@ namespace Series
         public string Titulo { get; set; }
         public string Descricao { get; set; }
         public int Ano { get; set; }
+        private bool Excluido { get; set; }
 
         public Serie(int id, Genero genero, string titulo, string desc, int ano)
         {
@@ -18,6 +19,7 @@ namespace Series
             this.Titulo = titulo;
             this.Descricao = desc;
             this.Ano = ano;
+            this.Excluido = false;
         }
 
         public override string ToString()
@@ -38,6 +40,14 @@ namespace Series
         public int retornaId()
         {
             return this.Id;
+        }
+        public bool retornaExcluido()
+        {
+            return this.Excluido;
+        }
+        public void Excluir()
+        {
+            this.Excluido = true;
         }
     }
 }
